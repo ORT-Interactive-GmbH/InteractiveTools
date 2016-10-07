@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "InteractiveTools"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "ORT Interactive iOS toolbox"
 
   s.description  = <<-DESC
@@ -84,7 +84,7 @@ Pod::Spec.new do |s|
 
   # s.exclude_files = "Classes/Exclude"
 
-  s.public_header_files = "InteractiveTools/**/*.h"
+  # s.public_header_files = "InteractiveTools/**/*.h"
 
   # s.prefix_header_contents = ""
 
