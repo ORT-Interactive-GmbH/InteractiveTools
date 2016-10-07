@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "InteractiveTools"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "ORT Interactive iOS toolbox"
 
   s.description  = <<-DESC
@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "InteractiveTools/**/*.m"
+  s.source_files  = "InteractiveTools/**/*.{h,m}"
 
   # s.exclude_files = "Classes/Exclude"
 
