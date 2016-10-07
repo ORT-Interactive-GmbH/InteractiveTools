@@ -1,0 +1,139 @@
+# Customise this file, documentation can be found here:
+# https://github.com/fastlane/fastlane/tree/master/docs
+# All available actions: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Actions.md
+# can also be listed using the `fastlane actions` command
+
+# Change the syntax highlighting to Ruby
+# All lines starting with a # are ignored when running `fastlane`
+
+# By default, fastlane will send which actions are used
+# No personal data is shared, more information on https://github.com/fastlane/enhancer
+# Uncomment the following line to opt out
+opt_out_usage
+
+# If you want to automatically update fastlane if a new version is available:
+# update_fastlane
+
+# This is the minimum version number required.
+# Update this, if you use features of a newer version
+fastlane_version "1.68.0"
+
+default_platform :ios
+
+platform :ios do
+  before_all do
+    # enterprise certificates are not allowed in "match" by default
+    ENV['MATCH_FORCE_ENTERPRISE'] = "1"
+
+    # App settings (enterprise)
+
+    # plist file
+    ENV['ORT_ENTERPRISE_PLIST']='InteractiveToolsApp/Info.plist'
+    # bundle ID for enterprise deployment
+    ENV['ORT_ENTERPRISE_BUNDLE']='de.ort-interactive.interactivetoolsapp'
+    # team short name for use in match repo (e.g. ort-enterprise-match)
+    ENV['ORT_ENTERPRISE_TEAM']='ort'
+    # enterprise scheme name 
+    ENV['ORT_ENTERPRISE_SCHEME']="InteractiveToolsApp"
+    # codesign identity (necessary for Jenkins compile)
+    ENV['ORT_ENTERPRISE_CODESIGN_IDENTITY']="iPhone Distribution: ORT Interactive GmbH"
+    # project name
+    ENV['ORT_PROJECT_NAME']='InteractiveTools'
+    #  slack channel for notifications
+    ENV['ORT_SLACK_CHANNEL']='#appdevelopment'
+    # application ID in wifidistribution
+    ENV['ORT_WIFIDISTRIBUTION_APP_ID']='eobnv53v'
+
+    derived_settings
+  end
+
+  desc "Runs all the tests"
+  lane :test do
+    scan
+  end
+
+  desc "Take screenshots"
+  lane :screenshot do
+    snapshot
+  end
+
+  desc "Submit a new Beta Build to Wifidistribution"
+  desc "This will also make sure the profile is up to date"
+  lane :beta do
+    # don't try to build using beta versions
+    verify_xcode_version
+    # set build number
+    set_info_plist_value( path: ENV['ORT_ENTERPRISE_PLIST'], key: 'CFBundleVersion', value: ENV['ORT_BUILD_NUM'] ) 
+    # synchronise certificates with bitbucket repo
+    match(git_branch: ENV['ORT_ENTERPRISE_TEAM'], type: 'enterprise', team_id: ENV['ORT_ENTERPRISE_TEAM_DEV'], git_url: ENV['ORT_ENTERPRISE_MATCH_REPO'])
+
+    # build app
+    gym(scheme: ENV['ORT_ENTERPRISE_SCHEME'], export_method: 'enterprise', codesigning_identity: ENV['ORT_ENTERPRISE_CODESIGN_IDENTITY'])
+
+    # upload to wifidistribution
+    distributor_url = distributor(
+      api_token: ENV['ORT_WIFIDISTRIBUTION_API_TOKEN'],
+      app_id: ENV['ORT_WIFIDISTRIBUTION_APP_ID'],
+      ipa:    ENV['ORT_IPA_NAME']
+    )
+
+    # notify appdevelopment via slack
+    slack(
+      message: "Successfully deployed new #{ENV['ORT_PROJECT_NAME']} app update version #{ENV['ORT_ENTERPRISE_VERSION_NUM']} with build number #{ENV['ORT_BUILD_NUM']} to wifidistribution. " + distributor_url,
+      channel: ENV['ORT_SLACK_CHANNEL']
+    )
+
+    # add tag for this beta version
+    add_git_tag( tag: "#{ENV['ORT_ENTERPRISE_VERSION_NUM']}")
+    # push tag to remote
+    push_git_tags
+  end
+
+  desc "Install development certificates and profiles"
+  lane :enterprisecerts do
+    match(git_branch: ENV['ORT_ENTERPRISE_TEAM'], app_identifier: ENV['ORT_ENTERPRISE_BUNDLE'], type: 'development', team_id: ENV['ORT_ENTERPRISE_TEAM_DEV'], git_url: ENV['ORT_ENTERPRISE_MATCH_REPO'])
+    match(git_branch: ENV['ORT_ENTERPRISE_TEAM'], app_identifier: ENV['ORT_ENTERPRISE_BUNDLE'], type: 'enterprise',  team_id: ENV['ORT_ENTERPRISE_TEAM_DEV'], git_url: ENV['ORT_ENTERPRISE_MATCH_REPO'])
+  end
+
+  desc "Install XCode plugin"
+  lane :xcode do
+    install_xcode_plugin(
+      url: "https://github.com/fastlane/FixCode/releases/download/0.4.0/FixCode.xcplugin.zip"
+    )
+  end
+
+  private_lane :verify_xcode_version do
+    xcode_select("/Applications/Xcode.app")
+  end
+
+  desc "Set derived variables from properties defined in before_all"
+  private_lane :derived_settings do
+    # IPA name
+    ENV['ORT_IPA_NAME']="./builds/#{ENV['ORT_PROJECT_NAME']}.ipa"
+    # get version number for enterprise build
+    ENV['ORT_ENTERPRISE_VERSION_NUM'] = get_info_plist_value( path: ENV['ORT_ENTERPRISE_PLIST'], key: 'CFBundleShortVersionString', )
+    # fetch the number of commits in the current branch
+    build_number = number_of_commits
+    ENV['ORT_BUILD_NUM'] = "#{build_number}"
+    # gym output name
+    ENV['GYM_OUTPUT_NAME'] = ENV['ORT_PROJECT_NAME']
+  end
+
+  lane :settings do
+    sh('set')
+  end
+
+  after_all do |lane|
+  end
+
+  error do |lane, exception|
+     slack(
+       message: exception.message,
+       success: false,
+       channel: ENV['ORT_SLACK_CHANNEL']
+     )
+  end
+end
+
+# More information about multiple platforms in fastlane: https://github.com/fastlane/fastlane/blob/master/docs/Platforms.md
+# All available actions: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Actions.md

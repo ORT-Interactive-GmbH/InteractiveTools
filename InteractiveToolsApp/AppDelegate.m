@@ -7,17 +7,27 @@
 //
 
 #import "AppDelegate.h"
+#import "IATouchHandler.h"
+#import "IATouchHandlerDelegate.h"
 
 @interface AppDelegate ()
-
+@property(nonatomic, strong) IATouchHandler* touchHandler;
 @end
 
 @implementation AppDelegate
 
+- (instancetype) init{
+    self = [super init];
+    if (self != nil){
+        self.touchHandler = [[IATouchHandler alloc] initWithDelegate:[[IATouchHandlerDelegate alloc] init]];
+    }
+    return self;
+}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    return YES;
+    return [self.touchHandler checkLaunchOptions:launchOptions forApplication:application];
 }
 
 
@@ -47,5 +57,9 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+// 3D Touch handling
+- (void) application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
+    completionHandler([self.touchHandler handleShortcutItem:shortcutItem]);
+}
 
 @end
