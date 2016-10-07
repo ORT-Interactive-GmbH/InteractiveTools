@@ -45,7 +45,7 @@ $ open MyProject.xcworkspace
 
 ## Examples
 You might want to implement an IATouchDelegate like this:
-``` Objective C
+```objectivec
 import InteractiveTools
 
 class SharedManager {
@@ -56,7 +56,7 @@ class SharedManager {
 ```
 
 And provide your own class implementing the `LanguageProvider` protocol, like the `UILanguageProvider` in the example above:
-``` Objective C
+```objectivec
 // content of file IATouchHandlerDelegate.h
 #import "IATouchHandler.h"
 
@@ -104,7 +104,7 @@ And provide your own class implementing the `LanguageProvider` protocol, like th
 ```
 
 Set up the AppDelegate like this:
-``` Objective C
+```objectivec
 // bind to language keys
 #import "AppDelegate.h"
 #import "IATouchHandler.h"
