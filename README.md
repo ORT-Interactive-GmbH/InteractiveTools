@@ -46,17 +46,6 @@ $ open MyProject.xcworkspace
 ## Examples
 You might want to implement an IATouchDelegate like this:
 ```objectivec
-import InteractiveTools
-
-class SharedManager {
-    static let sharedInstance = LocalizationManager(languageProvider: UILanguageProvider(), defaultLanguage: "de", language: "de")
-
-    private init() {}
-}
-```
-
-And provide your own class implementing the `LanguageProvider` protocol, like the `UILanguageProvider` in the example above:
-```objectivec
 // content of file IATouchHandlerDelegate.h
 #import "IATouchHandler.h"
 
@@ -66,7 +55,7 @@ And provide your own class implementing the `LanguageProvider` protocol, like th
 
 // content of file IATouchHandlerDelegate.m
 #import "IATouchHandlerDelegate.h"
-#import "IAMessageBoxUtil.h"
+#import "UIAlertController+IAAdditions.h"
 
 @implementation IATouchHandlerDelegate
 
@@ -88,10 +77,10 @@ And provide your own class implementing the `LanguageProvider` protocol, like th
     // handle shortcuts
     switch (idx){
         case 0:
-            [IAMessageBoxUtil showMessage:@"Play shortcut handled" title:@"Shortcut handler" once:nil];
+            [UIAlertController showMessage:@"Play shortcut handled" title:@"Shortcut handler" once:nil];
             break;
         case 1:
-            [IAMessageBoxUtil showMessage:@"Pause shortcut handled" title:@"Shortcut handler" once:nil];
+            [UIAlertController showMessage:@"Pause shortcut handled" title:@"Shortcut handler" once:nil];
             break;
         default:
             // return NO or implement a default action and return YES

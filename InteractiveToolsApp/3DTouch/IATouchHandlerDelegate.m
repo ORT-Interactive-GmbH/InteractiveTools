@@ -7,7 +7,7 @@
 //
 
 #import "IATouchHandlerDelegate.h"
-#import "IAMessageBoxUtil.h"
+#import "UIAlertController+IAAdditions.h"
 
 @implementation IATouchHandlerDelegate
 
@@ -29,10 +29,10 @@
     // handle shortcuts
     switch (idx){
         case 0:
-            [IAMessageBoxUtil showMessage:@"Play shortcut handled" title:@"Shortcut handler" once:nil];
+            [UIAlertController showMessage:@"Play shortcut handled" title:@"Shortcut handler" once:nil];
             break;
         case 1:
-            [IAMessageBoxUtil showMessage:@"Pause shortcut handled" title:@"Shortcut handler" once:nil];
+            [UIAlertController showMessage:@"Pause shortcut handled" title:@"Shortcut handler" once:nil];
             break;
         default:
             // return NO or implement a default action and return YES
