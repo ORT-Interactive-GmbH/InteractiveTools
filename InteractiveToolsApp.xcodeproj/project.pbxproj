@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		D37A80001DC0FEE80034A02F /* UIAlertController+IAAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D37A7FFE1DC0FEE80034A02F /* UIAlertController+IAAdditions.h */; };
 		D37A80011DC0FEE80034A02F /* UIAlertController+IAAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A7FFF1DC0FEE80034A02F /* UIAlertController+IAAdditions.m */; };
+		D37E513C1DD5BE7A00C03156 /* IAToolsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D37E513B1DD5BE7A00C03156 /* IAToolsTest.m */; };
 		D3BB773F1DA79FC3008544F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BB773E1DA79FC3008544F0 /* main.m */; };
 		D3BB77421DA79FC3008544F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BB77411DA79FC3008544F0 /* AppDelegate.m */; };
 		D3BB77451DA79FC3008544F0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BB77441DA79FC3008544F0 /* ViewController.m */; };
 		D3BB77481DA79FC3008544F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3BB77461DA79FC3008544F0 /* Main.storyboard */; };
 		D3BB774A1DA79FC3008544F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3BB77491DA79FC3008544F0 /* Assets.xcassets */; };
 		D3BB774D1DA79FC3008544F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3BB774B1DA79FC3008544F0 /* LaunchScreen.storyboard */; };
-		D3BB77581DA79FC3008544F0 /* InteractiveToolsAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BB77571DA79FC3008544F0 /* InteractiveToolsAppTests.m */; };
 		D3BB77631DA79FC3008544F0 /* InteractiveToolsAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BB77621DA79FC3008544F0 /* InteractiveToolsAppUITests.m */; };
 		D3BB77791DA7A39A008544F0 /* InteractiveTools.h in Headers */ = {isa = PBXBuildFile; fileRef = D3BB77771DA7A39A008544F0 /* InteractiveTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D3BB777C1DA7A39A008544F0 /* InteractiveTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BB77751DA7A39A008544F0 /* InteractiveTools.framework */; };
@@ -27,6 +27,8 @@
 		D3BB77901DA7A7DA008544F0 /* IATouchHandlerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BB778F1DA7A7DA008544F0 /* IATouchHandlerDelegate.m */; };
 		D3BB77991DA7D57C008544F0 /* UIColor+IAAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D3BB77971DA7D57C008544F0 /* UIColor+IAAdditions.h */; };
 		D3BB779A1DA7D57C008544F0 /* UIColor+IAAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BB77981DA7D57C008544F0 /* UIColor+IAAdditions.m */; };
+		D3E07FD21DD5B81D003967A7 /* NSString+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = D3E07FD01DD5B81D003967A7 /* NSString+Additions.h */; };
+		D3E07FD31DD5B81D003967A7 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E07FD11DD5B81D003967A7 /* NSString+Additions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,7 @@
 		D37A7FFC1DC0FE180034A02F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		D37A7FFE1DC0FEE80034A02F /* UIAlertController+IAAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+IAAdditions.h"; sourceTree = "<group>"; };
 		D37A7FFF1DC0FEE80034A02F /* UIAlertController+IAAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+IAAdditions.m"; sourceTree = "<group>"; };
+		D37E513B1DD5BE7A00C03156 /* IAToolsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAToolsTest.m; sourceTree = "<group>"; };
 		D3BB773A1DA79FC3008544F0 /* InteractiveToolsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InteractiveToolsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3BB773E1DA79FC3008544F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D3BB77401DA79FC3008544F0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -82,7 +85,6 @@
 		D3BB774C1DA79FC3008544F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3BB774E1DA79FC3008544F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3BB77531DA79FC3008544F0 /* InteractiveToolsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InteractiveToolsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D3BB77571DA79FC3008544F0 /* InteractiveToolsAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InteractiveToolsAppTests.m; sourceTree = "<group>"; };
 		D3BB77591DA79FC3008544F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3BB775E1DA79FC3008544F0 /* InteractiveToolsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InteractiveToolsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3BB77621DA79FC3008544F0 /* InteractiveToolsAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InteractiveToolsAppUITests.m; sourceTree = "<group>"; };
@@ -99,6 +101,8 @@
 		D3BB77951DA7D0AA008544F0 /* InteractiveTools.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = InteractiveTools.podspec; sourceTree = SOURCE_ROOT; };
 		D3BB77971DA7D57C008544F0 /* UIColor+IAAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+IAAdditions.h"; sourceTree = "<group>"; };
 		D3BB77981DA7D57C008544F0 /* UIColor+IAAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+IAAdditions.m"; sourceTree = "<group>"; };
+		D3E07FD01DD5B81D003967A7 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
+		D3E07FD11DD5B81D003967A7 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,8 +188,8 @@
 		D3BB77561DA79FC3008544F0 /* InteractiveToolsAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				D3BB77571DA79FC3008544F0 /* InteractiveToolsAppTests.m */,
 				D3BB77591DA79FC3008544F0 /* Info.plist */,
+				D37E513B1DD5BE7A00C03156 /* IAToolsTest.m */,
 			);
 			path = InteractiveToolsAppTests;
 			sourceTree = "<group>";
@@ -204,6 +208,7 @@
 			children = (
 				D37A7FFC1DC0FE180034A02F /* README.md */,
 				D3BB77951DA7D0AA008544F0 /* InteractiveTools.podspec */,
+				D3E07FCF1DD5B6C8003967A7 /* Tools */,
 				D3BB77821DA7A558008544F0 /* 3DTouch */,
 				D3BB77831DA7A558008544F0 /* Application */,
 				D3BB77841DA7A558008544F0 /* UI */,
@@ -251,6 +256,15 @@
 			path = 3DTouch;
 			sourceTree = "<group>";
 		};
+		D3E07FCF1DD5B6C8003967A7 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				D3E07FD01DD5B81D003967A7 /* NSString+Additions.h */,
+				D3E07FD11DD5B81D003967A7 /* NSString+Additions.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -262,6 +276,7 @@
 				D3BB77871DA7A5B5008544F0 /* IAApplicationNotificationAdapter.h in Headers */,
 				D3BB778B1DA7A622008544F0 /* IATouchHandler.h in Headers */,
 				D3BB77791DA7A39A008544F0 /* InteractiveTools.h in Headers */,
+				D3E07FD21DD5B81D003967A7 /* NSString+Additions.h in Headers */,
 				D37A80001DC0FEE80034A02F /* UIAlertController+IAAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,7 +458,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3BB77581DA79FC3008544F0 /* InteractiveToolsAppTests.m in Sources */,
+				D37E513C1DD5BE7A00C03156 /* IAToolsTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +477,7 @@
 				D37A80011DC0FEE80034A02F /* UIAlertController+IAAdditions.m in Sources */,
 				D3BB778C1DA7A622008544F0 /* IATouchHandler.m in Sources */,
 				D3BB779A1DA7D57C008544F0 /* UIColor+IAAdditions.m in Sources */,
+				D3E07FD31DD5B81D003967A7 /* NSString+Additions.m in Sources */,
 				D3BB77881DA7A5B5008544F0 /* IAApplicationNotificationAdapter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
