@@ -49,7 +49,7 @@
     return retVal;
 }
 
-- (NSString *) replaceMatches: (NSString *) regEx byTemplate: (NSString *) template {
+- (NSString *) replaceMatches: (NSString *) regEx byTemplate: (NSString *) tmpl {
     // init vars
     NSError *error = nil;
     // regular expression
@@ -59,7 +59,7 @@
         return nil;
     }
 
-    return [expression stringByReplacingMatchesInString:self options:0 range:NSMakeRange(0, self.length) withTemplate:template];
+    return [expression stringByReplacingMatchesInString:self options:0 range:NSMakeRange(0, self.length) withTemplate:tmpl];
 }
 
 @end

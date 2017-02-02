@@ -38,7 +38,7 @@
 - (void) testReplace {
     [self checkReplace:@"test my example   string" pattern:@"e" template:@"ö" result:@"töst my öxamplö   string"];
     [self checkReplace:@"test my example   string" pattern:@"[[:space:]]" template:@"" result:@"testmyexamplestring"];
-//    [self checkReplace:@"http:\\www.google.de" pattern:@"\\" template:@"/" result:@"http://www.google.de"];
+    [self checkReplace:@"http://www.google.de" pattern:@"http:" template:@"https:" result:@"https://www.google.de"];
 }
 
 @end

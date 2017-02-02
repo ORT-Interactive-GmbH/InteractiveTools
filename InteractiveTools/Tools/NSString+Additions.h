@@ -16,6 +16,6 @@
 
 - (NSArray<NSString *> *) group: (NSString *) regEx;
 
-- (NSString *) replaceMatches: (NSString *) regEx byTemplate: (NSString *) template;
+- (NSString *) replaceMatches: (NSString *) regEx byTemplate: (NSString *) tmpl;
 
 @end
