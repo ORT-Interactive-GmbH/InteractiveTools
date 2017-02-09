@@ -14,5 +14,5 @@ FOUNDATION_EXPORT double InteractiveToolsVersionNumber;
 //! Project version string for InteractiveTools.
 FOUNDATION_EXPORT const unsigned char InteractiveToolsVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <InteractiveTools/PublicHeader.h>
-
+// In this header, you should import all the public headers of your framework using statements like #import
+// <InteractiveTools/PublicHeader.h>

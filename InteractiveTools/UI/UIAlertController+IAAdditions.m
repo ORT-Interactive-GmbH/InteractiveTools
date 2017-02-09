@@ -10,11 +10,9 @@
 
 + (void)showErrorMessage:(nullable NSError *)error {
     [self showErrorMessage:error
-                   actions:@[
-                       [UIAlertAction actionWithTitle:@"OK"
-                                              handler:^(UIAlertAction *action){
-                                              }]
-                   ]];
+                   actions:@[ [UIAlertAction actionWithTitle:@"OK"
+                                                     handler:^(UIAlertAction *action){
+                                                     }] ]];
 }
 
 + (void)showErrorMessage:(nullable NSError *)error actions:(nonnull NSArray<UIAlertAction *> *)actions {
@@ -30,11 +28,9 @@
     [self showMessage:message
                 title:title
                  once:onlyOnceId
-              actions:@[
-                  [UIAlertAction actionWithTitle:@"OK"
-                                         handler:^(UIAlertAction *action){
-                                         }]
-              ]];
+              actions:@[ [UIAlertAction actionWithTitle:@"OK"
+                                                handler:^(UIAlertAction *action){
+                                                }] ]];
 }
 
 + (void)showMessage:(nonnull NSString *)message

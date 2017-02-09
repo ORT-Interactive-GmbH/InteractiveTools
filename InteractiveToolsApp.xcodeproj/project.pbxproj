@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D3538F4F1E4C7837005F3133 /* NSData+IAAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D3538F4D1E4C7837005F3133 /* NSData+IAAdditions.h */; };
+		D3538F501E4C7837005F3133 /* NSData+IAAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D3538F4E1E4C7837005F3133 /* NSData+IAAdditions.m */; };
 		D37A80001DC0FEE80034A02F /* UIAlertController+IAAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D37A7FFE1DC0FEE80034A02F /* UIAlertController+IAAdditions.h */; };
 		D37A80011DC0FEE80034A02F /* UIAlertController+IAAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A7FFF1DC0FEE80034A02F /* UIAlertController+IAAdditions.m */; };
 		D37E513C1DD5BE7A00C03156 /* IAToolsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D37E513B1DD5BE7A00C03156 /* IAToolsTest.m */; };
@@ -70,6 +72,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D3538F4D1E4C7837005F3133 /* NSData+IAAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+IAAdditions.h"; sourceTree = "<group>"; };
+		D3538F4E1E4C7837005F3133 /* NSData+IAAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+IAAdditions.m"; sourceTree = "<group>"; };
 		D37A7FFC1DC0FE180034A02F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		D37A7FFE1DC0FEE80034A02F /* UIAlertController+IAAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+IAAdditions.h"; sourceTree = "<group>"; };
 		D37A7FFF1DC0FEE80034A02F /* UIAlertController+IAAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+IAAdditions.m"; sourceTree = "<group>"; };
@@ -261,6 +265,8 @@
 			children = (
 				D3E07FD01DD5B81D003967A7 /* NSString+Additions.h */,
 				D3E07FD11DD5B81D003967A7 /* NSString+Additions.m */,
+				D3538F4D1E4C7837005F3133 /* NSData+IAAdditions.h */,
+				D3538F4E1E4C7837005F3133 /* NSData+IAAdditions.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -272,6 +278,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3538F4F1E4C7837005F3133 /* NSData+IAAdditions.h in Headers */,
 				D3BB77991DA7D57C008544F0 /* UIColor+IAAdditions.h in Headers */,
 				D3BB77871DA7A5B5008544F0 /* IAApplicationNotificationAdapter.h in Headers */,
 				D3BB778B1DA7A622008544F0 /* IATouchHandler.h in Headers */,
@@ -288,6 +295,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3BB77671DA79FC3008544F0 /* Build configuration list for PBXNativeTarget "InteractiveToolsApp" */;
 			buildPhases = (
+				D3538F511E4C787D005F3133 /* Format source code */,
 				D3BB77361DA79FC3008544F0 /* Sources */,
 				D3BB77371DA79FC3008544F0 /* Frameworks */,
 				D3BB77381DA79FC3008544F0 /* Resources */,
@@ -307,6 +315,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3BB776A1DA79FC3008544F0 /* Build configuration list for PBXNativeTarget "InteractiveToolsAppTests" */;
 			buildPhases = (
+				D3538F531E4C7C68005F3133 /* Format source code */,
 				D3BB774F1DA79FC3008544F0 /* Sources */,
 				D3BB77501DA79FC3008544F0 /* Frameworks */,
 				D3BB77511DA79FC3008544F0 /* Resources */,
@@ -325,6 +334,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3BB776D1DA79FC3008544F0 /* Build configuration list for PBXNativeTarget "InteractiveToolsAppUITests" */;
 			buildPhases = (
+				D3538F541E4C7C87005F3133 /* Format source code */,
 				D3BB775A1DA79FC3008544F0 /* Sources */,
 				D3BB775B1DA79FC3008544F0 /* Frameworks */,
 				D3BB775C1DA79FC3008544F0 /* Resources */,
@@ -343,6 +353,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3BB777E1DA7A39A008544F0 /* Build configuration list for PBXNativeTarget "InteractiveTools" */;
 			buildPhases = (
+				D3538F521E4C7918005F3133 /* Format source code */,
 				D3BB77701DA7A39A008544F0 /* Sources */,
 				D3BB77711DA7A39A008544F0 /* Frameworks */,
 				D3BB77721DA7A39A008544F0 /* Headers */,
@@ -369,6 +380,7 @@
 				TargetAttributes = {
 					D3BB77391DA79FC3008544F0 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = RZVMS3MR75;
 						ProvisioningStyle = Manual;
 					};
 					D3BB77521DA79FC3008544F0 = {
@@ -442,6 +454,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D3538F511E4C787D005F3133 /* Format source code */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Format source code";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "type clang-format\nif [[ $? -eq 0 ]]\nthen\n   # re-format source code of all header and source code files that have changed since last commit\n   find InteractiveToolsApp -name \"*.[hm]\" | xargs git status -s | sed -e 's#^[[:space:]AM]*[[:space:]]##g' | xargs clang-format -i\nfi";
+		};
+		D3538F521E4C7918005F3133 /* Format source code */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Format source code";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "type clang-format\nif [[ $? -eq 0 ]]\nthen\n   # re-format source code of all header and source code files that have changed since last commit\n   find InteractiveTools -name \"*.[hm]\" | xargs git status -s | sed -e 's#^[[:space:]AM]*[[:space:]]##g' | xargs clang-format -i\nfi";
+		};
+		D3538F531E4C7C68005F3133 /* Format source code */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Format source code";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "type clang-format\nif [[ $? -eq 0 ]]\nthen\n   # re-format source code of all header and source code files that have changed since last commit\n   find InteractiveToolsAppTests -name \"*.[hm]\" | xargs git status -s | sed -e 's#^[[:space:]AM]*[[:space:]]##g' | xargs clang-format -i\nfi";
+		};
+		D3538F541E4C7C87005F3133 /* Format source code */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Format source code";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "type clang-format\nif [[ $? -eq 0 ]]\nthen\n   # re-format source code of all header and source code files that have changed since last commit\n   find InteractiveToolsAppUITests -name \"*.[hm]\" | xargs git status -s | sed -e 's#^[[:space:]AM]*[[:space:]]##g' | xargs clang-format -i\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D3BB77361DA79FC3008544F0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -476,6 +547,7 @@
 			files = (
 				D37A80011DC0FEE80034A02F /* UIAlertController+IAAdditions.m in Sources */,
 				D3BB778C1DA7A622008544F0 /* IATouchHandler.m in Sources */,
+				D3538F501E4C7837005F3133 /* NSData+IAAdditions.m in Sources */,
 				D3BB779A1DA7D57C008544F0 /* UIColor+IAAdditions.m in Sources */,
 				D3E07FD31DD5B81D003967A7 /* NSString+Additions.m in Sources */,
 				D3BB77881DA7A5B5008544F0 /* IAApplicationNotificationAdapter.m in Sources */,
@@ -614,11 +686,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = RZVMS3MR75;
 				INFOPLIST_FILE = InteractiveToolsApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.ort-interactive.interactivetoolsapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "f6e7b737-ce3f-41b1-bcf1-5ff1f446923a";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development de.ort-interactive.interactivetoolsapp";
 			};
 			name = Debug;
 		};
@@ -626,11 +700,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = RZVMS3MR75;
 				INFOPLIST_FILE = InteractiveToolsApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.ort-interactive.interactivetoolsapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "be5a3970-ca89-47e6-b2f1-8f4e4c4c313a";
+				PROVISIONING_PROFILE_SPECIFIER = "match InHouse de.ort-interactive.interactivetoolsapp";
 			};
 			name = Release;
 		};

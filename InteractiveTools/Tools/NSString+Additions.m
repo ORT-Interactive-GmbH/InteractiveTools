@@ -18,27 +18,28 @@
     return [self match:emailRegex];
 }
 
-- (BOOL) match: (NSString *) regEx {
+- (BOOL)match:(NSString *)regEx {
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regEx];
     return [predicate evaluateWithObject:self];
 }
 
-- (NSArray<NSString *> *) group: (NSString *) regEx {
+- (NSArray<NSString *> *)group:(NSString *)regEx {
     // init vars
     NSTextCheckingResult *match = nil;
     NSError *error = nil;
     // create new empty array
     NSMutableArray<NSString *> *retVal = [NSMutableArray<NSString *> array];
     // regular expression
-    NSRegularExpression *expression = [NSRegularExpression regularExpressionWithPattern:regEx options:NSRegularExpressionCaseInsensitive error:&error];
+    NSRegularExpression *expression =
+        [NSRegularExpression regularExpressionWithPattern:regEx options:NSRegularExpressionCaseInsensitive error:&error];
     // expression might not be correct
-    if ( error == nil ){
+    if (error == nil) {
         // try to match URL for QR code link
         match = [expression firstMatchInString:self options:NSMatchingAnchored range:NSMakeRange(0, self.length)];
         // might still be no match
-        if ( match != nil ) {
+        if (match != nil) {
             // iterate results
-            for ( int i = 0; i < match.numberOfRanges; ++i ) {
+            for (int i = 0; i < match.numberOfRanges; ++i) {
                 // add each match to result array
                 NSRange range = [match rangeAtIndex:i];
                 [retVal addObject:[self substringWithRange:range]];
@@ -49,13 +50,14 @@
     return retVal;
 }
 
-- (NSString *) replaceMatches: (NSString *) regEx byTemplate: (NSString *) tmpl {
+- (NSString *)replaceMatches:(NSString *)regEx byTemplate:(NSString *)tmpl {
     // init vars
     NSError *error = nil;
     // regular expression
-    NSRegularExpression *expression = [NSRegularExpression regularExpressionWithPattern:regEx options:NSRegularExpressionCaseInsensitive error:&error];
+    NSRegularExpression *expression =
+        [NSRegularExpression regularExpressionWithPattern:regEx options:NSRegularExpressionCaseInsensitive error:&error];
     // expression might not be correct
-    if ( error != nil ) {
+    if (error != nil) {
         return nil;
     }
 

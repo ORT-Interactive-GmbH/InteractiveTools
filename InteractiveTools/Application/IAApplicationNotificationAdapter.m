@@ -39,7 +39,10 @@
         }
 
         if ([self.delegate respondsToSelector:@selector(applicationDidBecomeActive:)]) {
-            [nCenter addObserver:self selector:@selector(applicationDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
+            [nCenter addObserver:self
+                        selector:@selector(applicationDidBecomeActive:)
+                            name:UIApplicationDidBecomeActiveNotification
+                          object:nil];
         }
     }
     return self;
@@ -61,7 +64,7 @@
     [self.delegate applicationWillTerminate:notification];
 }
 
-- (void)applicationDidBecomeActive:(NSNotification *) notification{
+- (void)applicationDidBecomeActive:(NSNotification *)notification {
     [self.delegate applicationDidBecomeActive:notification];
 }
 

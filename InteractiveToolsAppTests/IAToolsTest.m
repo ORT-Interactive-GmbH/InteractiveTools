@@ -20,8 +20,9 @@
     XCTAssert([@"test my example   string" match:@"[^[:space:]]* my example[[:space:]]*string"]);
 }
 
-- (void) testGroup {
-    NSArray<NSString *> *result = [@"test my example   string" group:@"([^[:space:]]*)[[:space:]]*([^[:space:]]*)[[:space:]]*([^[:space:]]*)[[:space:]]*([^[:space:]]*)"];
+- (void)testGroup {
+    NSArray<NSString *> *result = [@"test my example   string"
+        group:@"([^[:space:]]*)[[:space:]]*([^[:space:]]*)[[:space:]]*([^[:space:]]*)[[:space:]]*([^[:space:]]*)"];
     XCTAssert(result.count == 5, @"Group regex result should not be empty");
     XCTAssert([result objectAtIndex:0], @"test my example   string");
     XCTAssert([result objectAtIndex:1], @"test");
@@ -30,12 +31,12 @@
     XCTAssert([result objectAtIndex:4], @"string");
 }
 
-- (void) checkReplace: (NSString *) string pattern: (NSString *) pattern template: (NSString *) template result: (NSString *) result {
+- (void)checkReplace:(NSString *)string pattern:(NSString *)pattern template:(NSString *)template result:(NSString *)result {
     NSString *res = [string replaceMatches:pattern byTemplate:template];
     XCTAssert([res isEqualToString:result]);
 }
 
-- (void) testReplace {
+- (void)testReplace {
     [self checkReplace:@"test my example   string" pattern:@"e" template:@"ö" result:@"töst my öxamplö   string"];
     [self checkReplace:@"test my example   string" pattern:@"[[:space:]]" template:@"" result:@"testmyexamplestring"];
     [self checkReplace:@"http://www.google.de" pattern:@"http:" template:@"https:" result:@"https://www.google.de"];

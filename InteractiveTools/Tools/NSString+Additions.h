@@ -12,10 +12,10 @@
 
 - (BOOL)validEmail;
 
-- (BOOL) match: (NSString *) regEx;
+- (BOOL)match:(NSString *)regEx;
 
-- (NSArray<NSString *> *) group: (NSString *) regEx;
+- (NSArray<NSString *> *)group:(NSString *)regEx;
 
-- (NSString *) replaceMatches: (NSString *) regEx byTemplate: (NSString *) tmpl;
+- (NSString *)replaceMatches:(NSString *)regEx byTemplate:(NSString *)tmpl;
 
 @end

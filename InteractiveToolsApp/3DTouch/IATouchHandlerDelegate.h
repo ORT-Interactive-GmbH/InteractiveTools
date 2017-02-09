@@ -8,6 +8,6 @@
 
 #import "IATouchHandler.h"
 
-@interface IATouchHandlerDelegate : NSObject<IATouchDelegate>
+@interface IATouchHandlerDelegate : NSObject <IATouchDelegate>
 
 @end

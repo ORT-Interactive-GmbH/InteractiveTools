@@ -11,32 +11,34 @@
 
 @implementation IATouchHandlerDelegate
 
-- (NSArray<UIApplicationShortcutItem *>*) handlerItems {
+- (NSArray<UIApplicationShortcutItem *> *)handlerItems {
     // configure shortcuts
-    return @[ [[UIApplicationShortcutItem alloc] initWithType:@"type1"
-                                               localizedTitle:@"Play"
-                                            localizedSubtitle:@"Start playing"
-                                                         icon:[UIApplicationShortcutIcon iconWithType: UIApplicationShortcutIconTypePlay]
-                                                     userInfo:nil],
-              [[UIApplicationShortcutItem alloc] initWithType:@"type2"
-                                               localizedTitle:@"Pause"
-                                            localizedSubtitle:@"Pause playback"
-                                                         icon:[UIApplicationShortcutIcon iconWithType: UIApplicationShortcutIconTypePause]
-                                                     userInfo:nil] ];
+    return @[
+        [[UIApplicationShortcutItem alloc] initWithType:@"type1"
+                                         localizedTitle:@"Play"
+                                      localizedSubtitle:@"Start playing"
+                                                   icon:[UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypePlay]
+                                               userInfo:nil],
+        [[UIApplicationShortcutItem alloc] initWithType:@"type2"
+                                         localizedTitle:@"Pause"
+                                      localizedSubtitle:@"Pause playback"
+                                                   icon:[UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypePause]
+                                               userInfo:nil]
+    ];
 }
 
-- (BOOL) handleItem: (UIApplicationShortcutItem *) item atIndex: (NSUInteger) idx {
+- (BOOL)handleItem:(UIApplicationShortcutItem *)item atIndex:(NSUInteger)idx {
     // handle shortcuts
-    switch (idx){
-        case 0:
-            [UIAlertController showMessage:@"Play shortcut handled" title:@"Shortcut handler" once:nil];
-            break;
-        case 1:
-            [UIAlertController showMessage:@"Pause shortcut handled" title:@"Shortcut handler" once:nil];
-            break;
-        default:
-            // return NO or implement a default action and return YES
-            return NO;
+    switch (idx) {
+    case 0:
+        [UIAlertController showMessage:@"Play shortcut handled" title:@"Shortcut handler" once:nil];
+        break;
+    case 1:
+        [UIAlertController showMessage:@"Pause shortcut handled" title:@"Shortcut handler" once:nil];
+        break;
+    default:
+        // return NO or implement a default action and return YES
+        return NO;
     }
     return YES;
 }

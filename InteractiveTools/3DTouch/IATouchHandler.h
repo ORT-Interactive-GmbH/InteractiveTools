@@ -10,20 +10,20 @@
 
 @protocol IATouchDelegate <NSObject>
 
-- (NSArray<UIApplicationShortcutItem *>*) handlerItems;
-- (BOOL) handleItem: (UIApplicationShortcutItem *) item atIndex: (NSUInteger) idx;
+- (NSArray<UIApplicationShortcutItem *> *)handlerItems;
+- (BOOL)handleItem:(UIApplicationShortcutItem *)item atIndex:(NSUInteger)idx;
 
 @end
 
 @interface IATouchHandler : NSObject
 
-@property (nonatomic, strong) UIApplicationShortcutItem* launchedShortcutItem;
+@property (nonatomic, strong) UIApplicationShortcutItem *launchedShortcutItem;
 
-- (instancetype) initWithDelegate: (id<IATouchDelegate>) delegate;
-- (instancetype) init NS_UNAVAILABLE;
+- (instancetype)initWithDelegate:(id<IATouchDelegate>)delegate;
+- (instancetype)init NS_UNAVAILABLE;
 
-- (BOOL) checkLaunchOptions:(NSDictionary *)launchOptions forApplication: (UIApplication *) application;
-- (BOOL) handleShortcutItem:(UIApplicationShortcutItem*) item;
-- (BOOL) handleShortcutItem;
+- (BOOL)checkLaunchOptions:(NSDictionary *)launchOptions forApplication:(UIApplication *)application;
+- (BOOL)handleShortcutItem:(UIApplicationShortcutItem *)item;
+- (BOOL)handleShortcutItem;
 
 @end
