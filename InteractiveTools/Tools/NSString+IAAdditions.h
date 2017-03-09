@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSString (Additions)
+@interface NSString (IAAdditions)
 
 - (BOOL)validEmail;
 

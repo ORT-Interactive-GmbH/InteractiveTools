@@ -1,14 +1,14 @@
 //
-//  NSString+Additions.m
+//  NSString+IAAdditions.m
 //  InteractiveTools
 //
 //  Created by Sebastian Westemeyer
 //  Copyright (c) 2016 ORT Interactive GmbH. All rights reserved.
 //
 
-#import "NSString+Additions.h"
+#import "NSString+IAAdditions.h"
 
-@implementation NSString (Additions)
+@implementation NSString (IAAdditions)
 
 - (BOOL)validEmail {
     BOOL stricterFilter = NO;

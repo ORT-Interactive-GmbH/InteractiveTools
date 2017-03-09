@@ -10,7 +10,7 @@
 
 @implementation IATuple
 
-- (instancetype) initWithFirst:(id) first second:(id) second {
+- (instancetype)initWithFirst:(id)first second:(id)second {
     self = [super init];
     if (self != nil) {
         self.first = first;

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D34135231E716D6200458DF3 /* IATuple.h in Headers */ = {isa = PBXBuildFile; fileRef = D34135211E716D6200458DF3 /* IATuple.h */; };
+		D34135241E716D6200458DF3 /* IATuple.m in Sources */ = {isa = PBXBuildFile; fileRef = D34135221E716D6200458DF3 /* IATuple.m */; };
 		D3538F4F1E4C7837005F3133 /* NSData+IAAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D3538F4D1E4C7837005F3133 /* NSData+IAAdditions.h */; };
 		D3538F501E4C7837005F3133 /* NSData+IAAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D3538F4E1E4C7837005F3133 /* NSData+IAAdditions.m */; };
 		D37A80001DC0FEE80034A02F /* UIAlertController+IAAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D37A7FFE1DC0FEE80034A02F /* UIAlertController+IAAdditions.h */; };
@@ -29,8 +31,8 @@
 		D3BB77901DA7A7DA008544F0 /* IATouchHandlerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BB778F1DA7A7DA008544F0 /* IATouchHandlerDelegate.m */; };
 		D3BB77991DA7D57C008544F0 /* UIColor+IAAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D3BB77971DA7D57C008544F0 /* UIColor+IAAdditions.h */; };
 		D3BB779A1DA7D57C008544F0 /* UIColor+IAAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BB77981DA7D57C008544F0 /* UIColor+IAAdditions.m */; };
-		D3E07FD21DD5B81D003967A7 /* NSString+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = D3E07FD01DD5B81D003967A7 /* NSString+Additions.h */; };
-		D3E07FD31DD5B81D003967A7 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E07FD11DD5B81D003967A7 /* NSString+Additions.m */; };
+		D3E07FD21DD5B81D003967A7 /* NSString+IAAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D3E07FD01DD5B81D003967A7 /* NSString+IAAdditions.h */; };
+		D3E07FD31DD5B81D003967A7 /* NSString+IAAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E07FD11DD5B81D003967A7 /* NSString+IAAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D34135211E716D6200458DF3 /* IATuple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IATuple.h; sourceTree = "<group>"; };
+		D34135221E716D6200458DF3 /* IATuple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IATuple.m; sourceTree = "<group>"; };
 		D3538F4D1E4C7837005F3133 /* NSData+IAAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+IAAdditions.h"; sourceTree = "<group>"; };
 		D3538F4E1E4C7837005F3133 /* NSData+IAAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+IAAdditions.m"; sourceTree = "<group>"; };
 		D37A7FFC1DC0FE180034A02F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
@@ -105,8 +109,8 @@
 		D3BB77951DA7D0AA008544F0 /* InteractiveTools.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = InteractiveTools.podspec; sourceTree = SOURCE_ROOT; };
 		D3BB77971DA7D57C008544F0 /* UIColor+IAAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+IAAdditions.h"; sourceTree = "<group>"; };
 		D3BB77981DA7D57C008544F0 /* UIColor+IAAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+IAAdditions.m"; sourceTree = "<group>"; };
-		D3E07FD01DD5B81D003967A7 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
-		D3E07FD11DD5B81D003967A7 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
+		D3E07FD01DD5B81D003967A7 /* NSString+IAAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+IAAdditions.h"; sourceTree = "<group>"; };
+		D3E07FD11DD5B81D003967A7 /* NSString+IAAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+IAAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,8 +267,10 @@
 		D3E07FCF1DD5B6C8003967A7 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				D3E07FD01DD5B81D003967A7 /* NSString+Additions.h */,
-				D3E07FD11DD5B81D003967A7 /* NSString+Additions.m */,
+				D34135211E716D6200458DF3 /* IATuple.h */,
+				D34135221E716D6200458DF3 /* IATuple.m */,
+				D3E07FD01DD5B81D003967A7 /* NSString+IAAdditions.h */,
+				D3E07FD11DD5B81D003967A7 /* NSString+IAAdditions.m */,
 				D3538F4D1E4C7837005F3133 /* NSData+IAAdditions.h */,
 				D3538F4E1E4C7837005F3133 /* NSData+IAAdditions.m */,
 			);
@@ -281,9 +287,10 @@
 				D3538F4F1E4C7837005F3133 /* NSData+IAAdditions.h in Headers */,
 				D3BB77991DA7D57C008544F0 /* UIColor+IAAdditions.h in Headers */,
 				D3BB77871DA7A5B5008544F0 /* IAApplicationNotificationAdapter.h in Headers */,
+				D34135231E716D6200458DF3 /* IATuple.h in Headers */,
 				D3BB778B1DA7A622008544F0 /* IATouchHandler.h in Headers */,
 				D3BB77791DA7A39A008544F0 /* InteractiveTools.h in Headers */,
-				D3E07FD21DD5B81D003967A7 /* NSString+Additions.h in Headers */,
+				D3E07FD21DD5B81D003967A7 /* NSString+IAAdditions.h in Headers */,
 				D37A80001DC0FEE80034A02F /* UIAlertController+IAAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -546,10 +553,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D37A80011DC0FEE80034A02F /* UIAlertController+IAAdditions.m in Sources */,
+				D34135241E716D6200458DF3 /* IATuple.m in Sources */,
 				D3BB778C1DA7A622008544F0 /* IATouchHandler.m in Sources */,
 				D3538F501E4C7837005F3133 /* NSData+IAAdditions.m in Sources */,
 				D3BB779A1DA7D57C008544F0 /* UIColor+IAAdditions.m in Sources */,
-				D3E07FD31DD5B81D003967A7 /* NSString+Additions.m in Sources */,
+				D3E07FD31DD5B81D003967A7 /* NSString+IAAdditions.m in Sources */,
 				D3BB77881DA7A5B5008544F0 /* IAApplicationNotificationAdapter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
