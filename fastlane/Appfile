@@ -1,9 +1,0 @@
-app_identifier ENV['ORT_ENTERPRISE_BUNDLE']
-apple_id ENV['ORT_APPLE_ID']
-
-# Developer Portal Team ID
-team_id ENV['ORT_ENTERPRISE_TEAM_DEV']  
-
-# you can even provide different app identifiers, Apple IDs and team names per lane:
-# More information: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Appfile.md
-

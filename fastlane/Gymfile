@@ -1,6 +1,0 @@
-
-output_directory "./builds/"
-clean true
-silent false
-use_legacy_build_api true
-
