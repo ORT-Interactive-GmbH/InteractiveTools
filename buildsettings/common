@@ -1,0 +1,23 @@
+# project name
+export IOS_PROJECT_NAME='InteractiveTools'
+# fastlane match repository
+export IOS_MATCH_REPO="ssh://git@bitbucket.org/ortinteractivegmbh/ort-enterprise-match.git"
+# apple ID
+export IOS_APPLE_ID='appdevelopment@ort-interactive.de'
+# team short name for use in match repo (e.g. ort-enterprise-match)
+export IOS_TEAM='ort'
+# plist file
+export IOS_PLIST='InteractiveToolsApp/Info.plist'
+# dev team ID
+export IOS_TEAM_DEV='RZVMS3MR75'
+# codesign identity (necessary for Jenkins compile)
+export IOS_CODESIGN_IDENTITY="iPhone Distribution: ORT Interactive GmbH"
+#  slack channel for notifications
+export IOS_SLACK_CHANNEL='#appdevelopment'
+# bundle ID for enterprise deployment
+export IOS_BUNDLE='de.ort-interactive.interactivetoolsapp'
+# enterprise scheme name 
+export IOS_SCHEME="InteractiveToolsApp"
+
+export IOS_DISTRIBUTION="enterprise"
+

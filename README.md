@@ -12,6 +12,7 @@ Current features:
 - `UIApplication` lifecycle wrapper class
 - `UIColor` category to generate colors from hex values
 - Message Box util as wrapper around `UIAlertAction`
+- Push message registration helpers
 
 Install CocoaPods if not already available:
 
@@ -44,6 +45,7 @@ $ open MyProject.xcworkspace
 ```
 
 ## Examples
+### 3D Touch
 You might want to implement an IATouchDelegate like this:
 ```objectivec
 // content of file IATouchHandlerDelegate.h
@@ -125,6 +127,58 @@ Set up the AppDelegate like this:
 
 @end
 ```
+
+### Push registration
+Set up the AppDelegate like this:
+```objectivec
+// bind to language keys
+#import "AppDelegate.h"
+#import "IAPushHandler.h"
+
+@interface AppDelegate ()
+@property (nonatomic, strong) IAPushHandler *pushHandler;
+@end
+
+@implementation AppDelegate
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.pushHandler = [IAPushHandler initWithLaunchOptions:launchOptions
+        urlPlistKey:@"WEB_BASE_URL"
+        handleNotificationReceived:^(IANotification *notification, BOOL hasBeenOpened) {
+            NSLog(@"Notification received");
+        }
+        settings:@{
+            kIASettingsKeyPushTokenParameterName : @"identifier",
+            kIASettingsKeyDeviceTypeParameterName : @"os_type",
+            kIASettingsKeyAutoPrompt : @NO
+        }];
+    return YES;
+}
+
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
+    // register to receive notifications
+    [application registerForRemoteNotifications];
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    [self.pushHandler application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [self.pushHandler application:application didReceiveRemoteNotification:userInfo];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    NSLog(@"Error!");
+}
+
+@end
+```
+
+Set up the `WEB_BASE_URL` in your `Info.plist` file as `$(WEB_BASE_URL)` and define a new user defined build setting named `WEB_BASE_URL`. A different web server URL can be set up per build configuration.
+
+The push registration process is triggered by calling the static method `[IAPushHandler registerForPushNotifications]` anywhere in the project. If the registration should be started immediately after app starts, the `kIASettingsKeyAutoPrompt` setting can be left out in app delegate.
+
 ## Credits
 
 ## License :

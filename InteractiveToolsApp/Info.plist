@@ -28,11 +28,18 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>WEB_BASE_URL</key>
+	<string>$(WEB_BASE_URL)</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+   </dict>
 </dict>
 </plist>

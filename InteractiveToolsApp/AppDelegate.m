@@ -9,9 +9,11 @@
 #import "AppDelegate.h"
 #import "IATouchHandler.h"
 #import "IATouchHandlerDelegate.h"
+#import "IAPushHandler.h"
 
 @interface AppDelegate ()
 @property (nonatomic, strong) IATouchHandler *touchHandler;
+@property (nonatomic, strong) IAPushHandler *pushHandler;
 @end
 
 @implementation AppDelegate
@@ -25,8 +27,35 @@
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.pushHandler = [IAPushHandler initWithLaunchOptions:launchOptions
+        urlPlistKey:@"WEB_BASE_URL"
+        handleNotificationReceived:^(IANotification *notification, BOOL hasBeenOpened) {
+            NSLog(@"Notification received");
+        }
+        settings:@{
+            kIASettingsKeyPushTokenParameterName : @"identifier",
+            kIASettingsKeyDeviceTypeParameterName : @"os_type",
+            kIASettingsKeyAutoPrompt : @NO
+        }];
     // Override point for customization after application launch.
     return [self.touchHandler checkLaunchOptions:launchOptions forApplication:application];
+}
+
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
+    // register to receive notifications
+    [application registerForRemoteNotifications];
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    [self.pushHandler application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [self.pushHandler application:application didReceiveRemoteNotification:userInfo];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    NSLog(@"Error: %@", error.localizedDescription);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

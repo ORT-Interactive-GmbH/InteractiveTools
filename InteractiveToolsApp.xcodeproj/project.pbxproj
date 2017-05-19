@@ -14,6 +14,14 @@
 		D37A80001DC0FEE80034A02F /* UIAlertController+IAAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D37A7FFE1DC0FEE80034A02F /* UIAlertController+IAAdditions.h */; };
 		D37A80011DC0FEE80034A02F /* UIAlertController+IAAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A7FFF1DC0FEE80034A02F /* UIAlertController+IAAdditions.m */; };
 		D37E513C1DD5BE7A00C03156 /* IAToolsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D37E513B1DD5BE7A00C03156 /* IAToolsTest.m */; };
+		D3BB56801ECC3CB700203713 /* IANotification.h in Headers */ = {isa = PBXBuildFile; fileRef = D3BB567A1ECC3CB700203713 /* IANotification.h */; };
+		D3BB56811ECC3CB700203713 /* IANotification.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BB567B1ECC3CB700203713 /* IANotification.m */; };
+		D3BB56841ECC3CB700203713 /* IAPushHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = D3BB567E1ECC3CB700203713 /* IAPushHandler.h */; };
+		D3BB56851ECC3CB700203713 /* IAPushHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BB567F1ECC3CB700203713 /* IAPushHandler.m */; };
+		D3BB56881ECC485600203713 /* IAPushTokenApi.h in Headers */ = {isa = PBXBuildFile; fileRef = D3BB56861ECC485600203713 /* IAPushTokenApi.h */; };
+		D3BB56891ECC485600203713 /* IAPushTokenApi.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BB56871ECC485600203713 /* IAPushTokenApi.m */; };
+		D3BB568D1ECDA32200203713 /* NSDictionary+IAAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D3BB568B1ECDA32200203713 /* NSDictionary+IAAdditions.h */; };
+		D3BB568E1ECDA32200203713 /* NSDictionary+IAAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BB568C1ECDA32200203713 /* NSDictionary+IAAdditions.m */; };
 		D3BB773F1DA79FC3008544F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BB773E1DA79FC3008544F0 /* main.m */; };
 		D3BB77421DA79FC3008544F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BB77411DA79FC3008544F0 /* AppDelegate.m */; };
 		D3BB77451DA79FC3008544F0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BB77441DA79FC3008544F0 /* ViewController.m */; };
@@ -82,6 +90,15 @@
 		D37A7FFE1DC0FEE80034A02F /* UIAlertController+IAAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+IAAdditions.h"; sourceTree = "<group>"; };
 		D37A7FFF1DC0FEE80034A02F /* UIAlertController+IAAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+IAAdditions.m"; sourceTree = "<group>"; };
 		D37E513B1DD5BE7A00C03156 /* IAToolsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAToolsTest.m; sourceTree = "<group>"; };
+		D3BB567A1ECC3CB700203713 /* IANotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IANotification.h; sourceTree = "<group>"; };
+		D3BB567B1ECC3CB700203713 /* IANotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IANotification.m; sourceTree = "<group>"; };
+		D3BB567E1ECC3CB700203713 /* IAPushHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPushHandler.h; sourceTree = "<group>"; };
+		D3BB567F1ECC3CB700203713 /* IAPushHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPushHandler.m; sourceTree = "<group>"; };
+		D3BB56861ECC485600203713 /* IAPushTokenApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPushTokenApi.h; sourceTree = "<group>"; };
+		D3BB56871ECC485600203713 /* IAPushTokenApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPushTokenApi.m; sourceTree = "<group>"; };
+		D3BB568A1ECC531E00203713 /* InteractiveToolsApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InteractiveToolsApp.entitlements; sourceTree = "<group>"; };
+		D3BB568B1ECDA32200203713 /* NSDictionary+IAAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+IAAdditions.h"; sourceTree = "<group>"; };
+		D3BB568C1ECDA32200203713 /* NSDictionary+IAAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+IAAdditions.m"; sourceTree = "<group>"; };
 		D3BB773A1DA79FC3008544F0 /* InteractiveToolsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InteractiveToolsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3BB773E1DA79FC3008544F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D3BB77401DA79FC3008544F0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -146,6 +163,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D3BB56791ECC3CB700203713 /* Push */ = {
+			isa = PBXGroup;
+			children = (
+				D3BB567A1ECC3CB700203713 /* IANotification.h */,
+				D3BB567B1ECC3CB700203713 /* IANotification.m */,
+				D3BB567E1ECC3CB700203713 /* IAPushHandler.h */,
+				D3BB567F1ECC3CB700203713 /* IAPushHandler.m */,
+				D3BB56861ECC485600203713 /* IAPushTokenApi.h */,
+				D3BB56871ECC485600203713 /* IAPushTokenApi.m */,
+			);
+			path = Push;
+			sourceTree = "<group>";
+		};
 		D3BB77311DA79FC3008544F0 = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +201,7 @@
 		D3BB773C1DA79FC3008544F0 /* InteractiveToolsApp */ = {
 			isa = PBXGroup;
 			children = (
+				D3BB568A1ECC531E00203713 /* InteractiveToolsApp.entitlements */,
 				D3BB778D1DA7A7C1008544F0 /* 3DTouch */,
 				D3BB77401DA79FC3008544F0 /* AppDelegate.h */,
 				D3BB77411DA79FC3008544F0 /* AppDelegate.m */,
@@ -216,6 +247,7 @@
 			children = (
 				D37A7FFC1DC0FE180034A02F /* README.md */,
 				D3BB77951DA7D0AA008544F0 /* InteractiveTools.podspec */,
+				D3BB56791ECC3CB700203713 /* Push */,
 				D3E07FCF1DD5B6C8003967A7 /* Tools */,
 				D3BB77821DA7A558008544F0 /* 3DTouch */,
 				D3BB77831DA7A558008544F0 /* Application */,
@@ -273,6 +305,8 @@
 				D3E07FD11DD5B81D003967A7 /* NSString+IAAdditions.m */,
 				D3538F4D1E4C7837005F3133 /* NSData+IAAdditions.h */,
 				D3538F4E1E4C7837005F3133 /* NSData+IAAdditions.m */,
+				D3BB568B1ECDA32200203713 /* NSDictionary+IAAdditions.h */,
+				D3BB568C1ECDA32200203713 /* NSDictionary+IAAdditions.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -285,11 +319,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3538F4F1E4C7837005F3133 /* NSData+IAAdditions.h in Headers */,
+				D3BB568D1ECDA32200203713 /* NSDictionary+IAAdditions.h in Headers */,
 				D3BB77991DA7D57C008544F0 /* UIColor+IAAdditions.h in Headers */,
 				D3BB77871DA7A5B5008544F0 /* IAApplicationNotificationAdapter.h in Headers */,
 				D34135231E716D6200458DF3 /* IATuple.h in Headers */,
 				D3BB778B1DA7A622008544F0 /* IATouchHandler.h in Headers */,
 				D3BB77791DA7A39A008544F0 /* InteractiveTools.h in Headers */,
+				D3BB56881ECC485600203713 /* IAPushTokenApi.h in Headers */,
+				D3BB56801ECC3CB700203713 /* IANotification.h in Headers */,
+				D3BB56841ECC3CB700203713 /* IAPushHandler.h in Headers */,
 				D3E07FD21DD5B81D003967A7 /* NSString+IAAdditions.h in Headers */,
 				D37A80001DC0FEE80034A02F /* UIAlertController+IAAdditions.h in Headers */,
 			);
@@ -389,6 +427,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = RZVMS3MR75;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					D3BB77521DA79FC3008544F0 = {
 						CreatedOnToolsVersion = 8.0;
@@ -552,10 +595,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3BB568E1ECDA32200203713 /* NSDictionary+IAAdditions.m in Sources */,
 				D37A80011DC0FEE80034A02F /* UIAlertController+IAAdditions.m in Sources */,
+				D3BB56891ECC485600203713 /* IAPushTokenApi.m in Sources */,
 				D34135241E716D6200458DF3 /* IATuple.m in Sources */,
 				D3BB778C1DA7A622008544F0 /* IATouchHandler.m in Sources */,
 				D3538F501E4C7837005F3133 /* NSData+IAAdditions.m in Sources */,
+				D3BB56851ECC3CB700203713 /* IAPushHandler.m in Sources */,
+				D3BB56811ECC3CB700203713 /* IANotification.m in Sources */,
 				D3BB779A1DA7D57C008544F0 /* UIColor+IAAdditions.m in Sources */,
 				D3E07FD31DD5B81D003967A7 /* NSString+IAAdditions.m in Sources */,
 				D3BB77881DA7A5B5008544F0 /* IAApplicationNotificationAdapter.m in Sources */,
@@ -646,6 +693,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				WEB_BASE_URL = "https://jsonplaceholder.typicode.com";
 			};
 			name = Debug;
 		};
@@ -687,6 +735,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				WEB_BASE_URL = "https://jsonplaceholder.typicode.com";
 			};
 			name = Release;
 		};
@@ -694,6 +743,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = InteractiveToolsApp/InteractiveToolsApp.entitlements;
 				DEVELOPMENT_TEAM = RZVMS3MR75;
 				INFOPLIST_FILE = InteractiveToolsApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -708,6 +758,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = InteractiveToolsApp/InteractiveToolsApp.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = RZVMS3MR75;
 				INFOPLIST_FILE = InteractiveToolsApp/Info.plist;
