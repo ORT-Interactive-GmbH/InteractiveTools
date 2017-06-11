@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "InteractiveTools"
-  s.version      = "0.1.1"
+  s.version      = "0.1.2"
   s.summary      = "ORT Interactive iOS toolbox"
 
   s.description  = <<-DESC

@@ -35,7 +35,8 @@
         settings:@{
             kIASettingsKeyPushTokenParameterName : @"identifier",
             kIASettingsKeyDeviceTypeParameterName : @"os_type",
-            kIASettingsKeyAutoPrompt : @NO
+            kIASettingsKeyAutoPrompt : @NO,
+            kIASettingsKeyUsePostRequest : @YES
         }];
     // Override point for customization after application launch.
     return [self.touchHandler checkLaunchOptions:launchOptions forApplication:application];

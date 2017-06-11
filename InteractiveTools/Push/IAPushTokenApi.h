@@ -10,6 +10,8 @@
 
 @interface IAPushTokenApi : NSObject
 
+@property (nonatomic, assign) BOOL usePostRequest;
+
 + (instancetype) new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
 

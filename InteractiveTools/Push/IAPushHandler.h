@@ -11,6 +11,7 @@
 @class IANotification;
 
 extern NSString const *kIASettingsKeyAutoPrompt;
+extern NSString const *kIASettingsKeyUsePostRequest;
 extern NSString const *kIASettingsKeyPushTokenParameterName;
 extern NSString const *kIASettingsKeyDeviceTypeParameterName;
 

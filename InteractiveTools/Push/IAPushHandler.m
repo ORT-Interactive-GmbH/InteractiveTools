@@ -13,6 +13,7 @@
 #import "IAApplicationNotificationAdapter.h"
 
 NSString const *kIASettingsKeyAutoPrompt = @"kIASettingsKeyAutoPrompt";
+NSString const *kIASettingsKeyUsePostRequest = @"kIASettingsKeyUsePostRequest";
 NSString const *kIASettingsKeyPushTokenParameterName = @"kIASettingsKeyPushTokenParameterName";
 NSString const *kIASettingsKeyDeviceTypeParameterName = @"kIASettingsKeyDeviceTypeParameterName";
 NSString *kIAUserDefaultsKeyToken = @"kIAUserDefaultsKeyToken";
@@ -61,17 +62,25 @@ NSString *kIAUserDefaultsKeyToken = @"kIAUserDefaultsKeyToken";
         self.apiSession = [[IAPushTokenApi alloc] initWithUrl:url
                                                pushTokenParam:[settings objectForKey:kIASettingsKeyPushTokenParameterName]
                                               deviceTypeParam:[settings objectForKey:kIASettingsKeyDeviceTypeParameterName]];
+        // may want to use POST request instead of GET
+        self.apiSession.usePostRequest = [self positiveValue:kIASettingsKeyUsePostRequest inSettings:settings];
+        // instantiate application notification adapter
         self.notificationAdapter = [[IAApplicationNotificationAdapter alloc] initWithDelegate:self];
 
-        // get auto prompt configuration
-        id object = [settings objectForKey:kIASettingsKeyAutoPrompt];
         // evaluate auto-prompt setting
-        if (object == nil || [object boolValue]) {
+        if ([self positiveValue:kIASettingsKeyAutoPrompt inSettings:settings]) {
             [IAPushHandler registerForPushNotifications:app];
         }
     }
 
     return self;
+}
+
+- (BOOL)positiveValue:(NSString const *)parameterName inSettings:(NSDictionary *)settings {
+    // get auto prompt configuration
+    id object = [settings objectForKey:parameterName];
+    // evaluate auto-prompt setting
+    return object != nil && [object boolValue];
 }
 
 #pragma mark - Push handling

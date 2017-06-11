@@ -24,6 +24,7 @@ NSString const *kIAGetParameterValueIos = @"ios";
 - (instancetype)initWithUrl:(NSString *)url pushTokenParam:(NSString *)pushTokenParam deviceTypeParam:(NSString *)deviceTypeParam {
     self = [super init];
     if (self) {
+        self.usePostRequest = NO;
         self.backendURL = url;
         self.pushTokenParameter = pushTokenParam ?: kIADefaultGetParameterToken;
         self.deviceTypeParameter = deviceTypeParam ?: kIADefaultGetParameterDevice;
@@ -33,16 +34,36 @@ NSString const *kIAGetParameterValueIos = @"ios";
 }
 
 - (void)sendPushToken:(NSString *)token {
+    // the request pointer to be set up with either GET or POST request
+    NSMutableURLRequest *request = nil;
+    // the backend URL as NSURL
+    NSURL *theBackendURL = [NSURL URLWithString:self.backendURL];
     // get parameter dictionary
     NSDictionary *params = [self parameterDictionary:token];
-    // the backend URL may already contain a questionmark for GET parameters
-    NSString *concatenationCharacter = [self.backendURL containsString:@"?"] ? @"&" : @"?";
-    // concatenate URL string
-    NSString *urlString = [NSString stringWithFormat:@"%@%@", [NSURL URLWithString:self.backendURL],
-                                                     [params buildQueryStringWithConcatenationCharacter:concatenationCharacter]];
-    // prepare request
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString]];
-    request.HTTPMethod = @"GET";
+
+    if (self.usePostRequest) {
+        NSString *post = [params buildQueryStringWithConcatenationCharacter:@""];
+        NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+
+        NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
+
+        request = [NSMutableURLRequest requestWithURL:theBackendURL];
+
+        [request setHTTPMethod:@"POST"];
+        [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+        [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+        [request setHTTPBody:postData];
+    } else {
+        // the backend URL may already contain a questionmark for GET parameters
+        NSString *concatenationCharacter = [self.backendURL containsString:@"?"] ? @"&" : @"?";
+        // concatenate URL string
+        NSString *urlString =
+            [NSString stringWithFormat:@"%@%@", theBackendURL, [params buildQueryStringWithConcatenationCharacter:concatenationCharacter]];
+        // prepare request
+        request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+        request.HTTPMethod = @"GET";
+    }
+
     // execute request
     [[[NSURLSession sharedSession] dataTaskWithRequest:request] resume];
 }
