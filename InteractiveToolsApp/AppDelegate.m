@@ -35,6 +35,7 @@
         settings:@{
             kIASettingsKeyPushTokenParameterName : @"identifier",
             kIASettingsKeyDeviceTypeParameterName : @"os_type",
+            kIASettingsAdditionalParameters : @{@"company" : @"1"},
             kIASettingsKeyAutoPrompt : @NO,
             kIASettingsKeyUsePostRequest : @YES
         }];

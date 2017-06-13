@@ -14,6 +14,7 @@
 
 NSString const *kIASettingsKeyAutoPrompt = @"kIASettingsKeyAutoPrompt";
 NSString const *kIASettingsKeyUsePostRequest = @"kIASettingsKeyUsePostRequest";
+NSString const *kIASettingsAdditionalParameters = @"kIASettingsAdditionalParameters";
 NSString const *kIASettingsKeyPushTokenParameterName = @"kIASettingsKeyPushTokenParameterName";
 NSString const *kIASettingsKeyDeviceTypeParameterName = @"kIASettingsKeyDeviceTypeParameterName";
 NSString *kIAUserDefaultsKeyToken = @"kIAUserDefaultsKeyToken";
@@ -61,7 +62,8 @@ NSString *kIAUserDefaultsKeyToken = @"kIAUserDefaultsKeyToken";
         self.notificationReceivedBlock = receivedCallback;
         self.apiSession = [[IAPushTokenApi alloc] initWithUrl:url
                                                pushTokenParam:[settings objectForKey:kIASettingsKeyPushTokenParameterName]
-                                              deviceTypeParam:[settings objectForKey:kIASettingsKeyDeviceTypeParameterName]];
+                                              deviceTypeParam:[settings objectForKey:kIASettingsKeyDeviceTypeParameterName]
+                                             additionalParams:[settings objectForKey:kIASettingsAdditionalParameters]];
         // may want to use POST request instead of GET
         self.apiSession.usePostRequest = [self positiveValue:kIASettingsKeyUsePostRequest inSettings:settings];
         // instantiate application notification adapter

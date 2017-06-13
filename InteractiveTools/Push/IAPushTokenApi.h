@@ -15,7 +15,10 @@
 + (instancetype) new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
 
-- (instancetype)initWithUrl:(NSString *)url pushTokenParam:(NSString *)pushTokenParam deviceTypeParam:(NSString *)deviceTypeParam;
+- (instancetype)initWithUrl:(NSString *)url
+             pushTokenParam:(NSString *)pushTokenParam
+            deviceTypeParam:(NSString *)deviceTypeParam
+           additionalParams:(NSDictionary<NSString *, NSString *> *)params;
 
 - (void)sendPushToken:(NSString *)token;
 

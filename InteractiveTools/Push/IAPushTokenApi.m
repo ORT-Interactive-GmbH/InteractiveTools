@@ -17,17 +17,22 @@ NSString const *kIAGetParameterValueIos = @"ios";
 @property (nonatomic, strong) NSString *backendURL;
 @property (nonatomic, strong) NSString *pushTokenParameter;
 @property (nonatomic, strong) NSString *deviceTypeParameter;
+@property (nonatomic, strong) NSDictionary<NSString *, NSString *> *additionalParams;
 @end
 
 @implementation IAPushTokenApi
 
-- (instancetype)initWithUrl:(NSString *)url pushTokenParam:(NSString *)pushTokenParam deviceTypeParam:(NSString *)deviceTypeParam {
+- (instancetype)initWithUrl:(NSString *)url
+             pushTokenParam:(NSString *)pushTokenParam
+            deviceTypeParam:(NSString *)deviceTypeParam
+           additionalParams:(NSDictionary<NSString *, NSString *> *)params {
     self = [super init];
     if (self) {
         self.usePostRequest = NO;
         self.backendURL = url;
         self.pushTokenParameter = pushTokenParam ?: kIADefaultGetParameterToken;
         self.deviceTypeParameter = deviceTypeParam ?: kIADefaultGetParameterDevice;
+        self.additionalParams = params;
     }
 
     return self;
@@ -69,7 +74,14 @@ NSString const *kIAGetParameterValueIos = @"ios";
 }
 
 - (NSDictionary *)parameterDictionary:(NSString *)token {
-    return @{self.pushTokenParameter : token, self.deviceTypeParameter : kIAGetParameterValueIos};
+    // create storage for parameters
+    NSMutableDictionary<NSString *, NSString *> *dict = [NSMutableDictionary
+        dictionaryWithDictionary:@{self.pushTokenParameter : token, self.deviceTypeParameter : kIAGetParameterValueIos}];
+    // might want to add additional parameters
+    if (self.additionalParams && self.additionalParams.count > 0) {
+        [dict addEntriesFromDictionary:self.additionalParams];
+    }
+    return dict;
 }
 
 @end
