@@ -186,5 +186,5 @@ The push registration process is triggered by calling the static method `[IAPush
 The code is available as github [project][home] under [MIT licence][1].
   
    [home]: https://github.com/ORT-Interactive-GmbH/InteractiveTools
-   [1]: http://revolunet.mit-license.org
+   [1]: https://github.com/swesteme/InteractiveTools/blob/master/LICENSE.md
    [2]: http://cocoapods.org
